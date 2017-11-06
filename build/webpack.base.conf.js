@@ -4,7 +4,7 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -35,6 +35,14 @@ module.exports = {
         include: [resolve('src'), resolve('test')],
         options: {
           formatter: require('eslint-friendly-formatter')
+        }
+      },
+      {
+        test: /\.(less|vue)$/,
+        loader: 'vue-mixin-loader',
+        enforce: 'pre',
+        options: {
+          mixinPath: resolve('src/global/css/mixin.less')
         }
       },
       {
