@@ -38,6 +38,11 @@ Axios.interceptors.response.use(function(response) {
 })
 
 Vue.prototype.$ajax = function(config) {
+  // 接口走 api 域名
+  const apiHost = 'http://api.wangfeia.com' // 本地走测试环境接口
+  config.url = apiHost + config.url
+  config.withCredentials = true
+
   if (config.method && config.method !== 'get') {
     // 如果请求是非get请求，则判断requestCache里是否缓存了该接口
     const strConfig = JSON.stringify(config)
