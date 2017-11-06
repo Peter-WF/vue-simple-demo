@@ -39,7 +39,7 @@ Axios.interceptors.response.use(function(response) {
 
 Vue.prototype.$ajax = function(config) {
   // 接口走 api 域名
-  const apiHost = 'http://api.wangfeia.com:3000' // 本地走测试环境接口
+  const apiHost = 'http://api.wangfeia.com' // 本地走测试环境接口
   config.url = apiHost + config.url
   config.withCredentials = true
 
