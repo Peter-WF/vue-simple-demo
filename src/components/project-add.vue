@@ -1,37 +1,36 @@
 <template>
-  <div class="project-editor">
+  <div class="project-add">
     <project-form v-model="form" @submit="onSubmit"/>
   </div>
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
   import ProjectForm from './project-form.vue'
+  import { mapActions } from 'vuex'
+
   export default {
-    name: 'project-editor',
+    name: 'project-add',
     props: {},
     data() {
       return {
         form: {
-          id: 233,
-          name: '默认编辑项目名称',
-          manager: '王五',
-          description: '默认编辑项目描述'
+          name: '',
+          manager: '',
+          description: ''
         }
       }
     },
     methods: {
       ...mapActions([
-        'updateProjectAction'
+        'addProjectAction'
       ]),
       onSubmit() {
-        this.updateProjectAction(this.form).then(() => {
+        this.addProjectAction(this.form).then(() => {
           this.$message({
             showClose: true,
             message: '更新成功'
           })
         }).catch(err => {
-          console.error(err)
           this.$message.error({
             showClose: true,
             message: err
@@ -45,7 +44,6 @@
   }
 </script>
 <style rel="stylesheet/less" lang="less">
-  .project-editor {
-    width: 100%;
+  .project-add {
   }
 </style>

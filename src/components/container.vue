@@ -11,6 +11,7 @@
             <template slot="title"><i class="el-icon-tickets"></i>mock 功能演示</template>
             <el-menu-item index="1" :route="{ path: '/' }">列表展示(GET)</el-menu-item>
             <el-menu-item index="2" :route="{ path: '/edit' }">内容编辑(PATCH)</el-menu-item>
+            <el-menu-item index="3" :route="{ path: '/add' }">内容新增(POST)</el-menu-item>
           </el-submenu>
         </el-menu>
       </el-aside>
@@ -22,6 +23,8 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex'
+
   export default {
     name: 'container',
     props: {},
@@ -34,6 +37,14 @@
       $route(to) {
         this.defaultActive = to.meta.index
       }
+    },
+    methods: {
+      ...mapActions([
+        'updateProjectListAction'
+      ])
+    },
+    created() {
+      this.updateProjectListAction()
     }
   }
 </script>
