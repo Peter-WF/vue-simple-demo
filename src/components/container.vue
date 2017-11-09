@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <el-container style="height: 500px; border: 1px solid #eee">
-      <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+    <el-container>
+      <el-aside>
         <el-menu
           :default-active="defaultActive"
           :default-openeds="['1']"
@@ -52,6 +52,18 @@
   .container {
     .el-container {
       position: relative;
+      border: 1px solid #eee
+    }
+    .el-aside {
+      width: 200px;
+      display: flex;
+      .el-menu {
+        flex: 1;
+        border: none;
+      }
+    }
+    .content {
+      padding: 10px;
     }
   }
 </style>

@@ -46,10 +46,11 @@
       width: 50%;
       min-width: 350px;
       max-width: 550px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      .el-form-item {
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 </style>

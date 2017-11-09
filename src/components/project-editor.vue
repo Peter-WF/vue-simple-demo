@@ -1,5 +1,15 @@
 <template>
   <div class="project-editor">
+    <el-alert
+      title="提示:"
+      type="info"
+      :closable="false"
+      show-icon
+    >
+      <a target="mock-server" href='http://api.wangfeia.com/mock-server/#/edit/PATCH/api/projects/233'>
+        点击这里编辑 mock 数据
+      </a>
+    </el-alert>
     <project-form v-model="form" @submit="onSubmit"/>
   </div>
 </template>

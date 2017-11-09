@@ -1,5 +1,16 @@
 <template>
   <div class="project-list">
+    <el-alert
+      title="提示:"
+      type="info"
+      :closable="false"
+      show-icon
+    >
+      自由切换数据 local、server、mock 数据，可
+      <a target="mock-server" href='http://api.wangfeia.com/mock-server/#/edit/GET/api/projects'>
+        点击这里编辑 mock 数据
+      </a>
+    </el-alert>
     <el-main>
       <el-table :data="projectList" style="width: 100%">
         <el-table-column
@@ -94,8 +105,12 @@
     /*left: 50%;*/
     /*transform: translate(-50%, -50%);*/
     flex: 1;
+    .el-main {
+      margin-top: 10px;
+      padding: 0;
+    }
     .project-list-operation {
-      margin-top: 50px;
+      margin-top: 20px;
     }
   }
 </style>
