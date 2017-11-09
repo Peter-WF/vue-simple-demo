@@ -31,7 +31,7 @@ export default new Router({
         name: 'ProjectAdd',
         component: ProjectAdd,
         meta: {
-          index: '2'
+          index: '3'
         }
       }]
     }
