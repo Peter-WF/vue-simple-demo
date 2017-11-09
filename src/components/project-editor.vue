@@ -40,6 +40,7 @@
             showClose: true,
             message: '更新成功'
           })
+          this.$router.push('/')
         }).catch(err => {
           console.error(err)
           this.$message.error({
